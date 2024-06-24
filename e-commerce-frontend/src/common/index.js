@@ -1,4 +1,4 @@
-const backendDomain =  "https://niya-s-one-stop-shop.vercel.app/"
+const backendDomain =  "https://niya-s-one-stop-shop.vercel.app"
 
 const summaryApi = {
     register : {
