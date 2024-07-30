@@ -22,6 +22,10 @@ app.use('/api', router)
 
 const PORT = 8080 || process.env.PORT
 
+app.get('/', (req, res) => {
+    res.send("Hello World")
+})
+
 connectDb().then(() => {
     app.listen(PORT, () => {
         console.log("Server is running")

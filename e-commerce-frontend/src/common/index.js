@@ -1,4 +1,4 @@
-const backendDomain =  "http://localhost:8080"
+const backendDomain =  "https://niya-s-one-stop-shop-1.onrender.com"
 
 const summaryApi = {
     register : {
