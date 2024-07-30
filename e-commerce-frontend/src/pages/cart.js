@@ -4,17 +4,14 @@ import Context from '../context';
 import { AiFillDelete } from 'react-icons/ai';
 import displayINRCurrency from '../helpers/DisplayCurrency'
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 
 
 const Cart = () => {
     const [data, setData] = useState([])
-    console.log('data: ', data);
+    
     const [loading, setLoading] = useState(false)
     const loadingCart = new Array(4).fill(null)
-    const navigate = useNavigate();
-
     const { getProductCount } = useContext(Context)
 
     const getCartData = async () => {
@@ -138,7 +135,7 @@ const Cart = () => {
                             data.map((product) => (
                                 <div key={product._id} className='w-full bg-white h-32 my-2 border border-slate-300 rounded grid grid-cols-[128px,1fr]'>
                                     <div className='w-32 h-32 bg-slate-200'>
-                                        <img src={product?.productId?.productImage?.[0]} className='w-full h-full object-scale-down mix-blend-multiply' />
+                                        <img src={product?.productId?.productImage?.[0]} className='w-full h-full object-scale-down mix-blend-multiply' alt={product?.productId?.productImage} />
                                     </div>
                                     <div className='p-2 relative flex flex-wrap flex-col'>
                                         <div className='absolute right-0 rounded-md p-2 hover:text-white cursor-pointer mr-auto' style={{ border: '1px solid rgb(56, 45, 94)', backgroundColor: 'rgb(56, 45, 94)', color: 'rgb(239,224,226)' }} onClick={()=> handleDeleteCartProduct(product?._id)}>

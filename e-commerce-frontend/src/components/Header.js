@@ -14,7 +14,7 @@ import Context from '../context';
 const Header = () => {
     const [menuDisplay, setMenuDisplay] = useState(false)
     const user = useSelector((state) => state?.user?.user)
-    console.log('user: ', user);
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const cartContext = useContext(Context)
