@@ -55,7 +55,7 @@ const AllUsers = () => {
       };
 
         return (
-            <div className="p-8 bg-white rounded-lg shadow-md" style={{ backgroundColor: 'rgb(239, 224, 226)' }}>
+            <div className="p-8 bg-white rounded-lg shadow-md mt-5" style={{ backgroundColor: 'rgb(239, 224, 226)' }}>
                 <div className="flex justify-between items-center mb-4">
                     <div>
                         <h2 className="text-xl font-semibold">Users</h2>

@@ -50,6 +50,7 @@ const UploadProduct = ({ onClose }) => {
             });
             fetchAllProduct()
             const responseData = await res.json();
+            console.log('responseData: ', responseData);
             if (responseData.success) {
                 toast.success(responseData.message);
                 reset();
@@ -64,7 +65,8 @@ const UploadProduct = ({ onClose }) => {
     }
 
     const handleChange = (e) => {
-        const {name, value} = e.target
+        // eslint-disable-next-line
+        const { name, value } = e.target;
     }
 
     const handleUploadProduct = async (e) => {
