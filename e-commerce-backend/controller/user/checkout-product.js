@@ -1,4 +1,5 @@
 const stripe = require('stripe')("sk_test_51PLNcUSEA6G6NB8g9caQ0pLg1SquV86plAZxGe2euLYWKXYtkPB0jJ48X1DlA0TTbbnaMudpTY4jnDxSQLUyLqus00NFPVKmgK");
+require('dotenv').config()
 
 async function checkoutProduct(req, res) {
     try {
@@ -21,8 +22,8 @@ async function checkoutProduct(req, res) {
             payment_method_types: ['card'],
             line_items: lineItems,
             mode: 'payment',
-            success_url: 'http://localhost:3002/pay-success',
-            cancel_url: 'http://localhost:3002/pay-rejected',
+            success_url:`${process.env.FRONTEND_DOMAIN_URL}/pay-success`,
+            cancel_url: `${process.env.FRONTEND_DOMAIN_URL}/pay-rejected`,
             customer_email: req.email,
             billing_address_collection: 'required',
             shipping_address_collection: {
