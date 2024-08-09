@@ -9,6 +9,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 const Cart = () => {
     const [data, setData] = useState([])
+    console.log('data: ', data);
     
     const [loading, setLoading] = useState(false)
     const loadingCart = new Array(4).fill(null)
@@ -133,6 +134,7 @@ const Cart = () => {
                             ))
                         ) : (
                             data.map((product) => (
+                                
                                 <div key={product._id} className='w-full bg-white h-32 my-2 border border-slate-300 rounded grid grid-cols-[128px,1fr]'>
                                     <div className='w-32 h-32 bg-slate-200'>
                                         <img src={product?.productId?.productImage?.[0]} className='w-full h-full object-scale-down mix-blend-multiply' alt={product?.productId?.productImage} />
@@ -142,7 +144,7 @@ const Cart = () => {
                                             <AiFillDelete />
                                         </div>
                                         <h2 className='text-lg lg:text-xl text-ellipsis line-clamp-1'>{product?.productId?.productName}</h2>
-                                        <p className='capitalize text-slate-500'>{product?.productId.category}</p>
+                                        <p className='capitalize text-slate-500'>{product?.productId?.category}</p>
                                         <div className='flex items-center justify-between flex-wrap'>
                                             <p className='text-red-600 font-medium text-md'>{displayINRCurrency(product?.productId?.sellingPrice)}</p>
                                             <p className='text-slate-600 font-semibold text-md'>{displayINRCurrency(product?.productId?.sellingPrice * product?.productQuantity)}</p>
